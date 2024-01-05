@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문화포털</title>
+
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- 스와이퍼 라이브러리 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- 테일윈드 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 공통 CSS 연결 -->
+    <link rel="stylesheet" href="css/common.css">
+
+    <!-- 공통 Js 연결 -->
+    <script defer src="js/common.js"></script>
+</head>
+<body>
+    <!-- PC 헤더 -->
+    <header class="pc_top_bar">
+        <!-- 	헤더에 relative -->
+        <div class="pc_top_bar_wrap mx-auto w-full h-auto">
+            <div class="con flex mx-auto pt-[8px] mb-[33px]">
+                <h1 class="mt-[65px]">
+                    <a href="#">
+                        <img src="images/header_logo.png" alt="문화포털 로고">
+                    </a>
+                </h1>
+                <div class="header_search mx-auto mt-[55px]">
+                    <div class="header_search_box mx-auto">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <button class="header_search_btn"></button>
+                    </div>
+                    <div class="header_search_bar_keyword text-sm mt-[10px]">
+                        <a href="#">활옷</a>
+                        <a href="#">근정전</a>
+                        <a href="#">구름</a>
+                        <a href="#">구름문</a>
+                        <a href="#">태극</a>
+                    </div>
+                </div>
+                <div class="header_menu_wrap flex text-sm">
+                    <ul class="login_menu flex">
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">이용안내</a></li>
+                    </ul>
+                    <div class="scale_view flex ">
+                        <span class="mx-[8px] mt-[3px]">화면크기</span>
+                        <div class="scale_btn">
+                            <button class="plus">+</button>
+                            <span id="body_size">100%</span>
+                            <button class="minus">-</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pc_menu_wrap w-full mx-auto bg-white">
+            <div class="con flex mx-auto">
+                <nav class="header_menu h-auto w-full">
+                    <ul class="header_tapmenu flex w-full">
+                        <li>
+                            <a href="#" class="font-bold text-xl main_txt">문화체험</a>
+                            <ul class="sub_menu">
+                                <li>
+                                    <a href="#">집콕+집밖 문화생활
+                                        <span class="point">특화서비스</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">한눈에 보는 문화정보</a></li>
+                                <li><a href="#">문화릴레이티켓</a></li>
+                                <li><a href="#">문화캘린더</a></li>
+                                <li><a href="#">문화공간,단체</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="font-bold text-xl main_txt">문화공감</a>
+                            <ul class="sub_menu">
+                            <li>
+                                <a href="#">문화TV
+                                    <span class="point">특화서비스</span>
+                                </a>
+                                <ul class="text-xs">
+                                    <li><a href="#">문화영상</a></li>
+                                    <li><a href="#">유네스코 등재유산</a></li>
+                                    <li><a href="#">한국문화100</a></li>
+                                    <li><a href="#">문화인터뷰</a></li>
+                                    <li><a href="#">기관별영상</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">공감마당</a>
+                                <ul class="text-xs">
+                                    <li><a href="#">공감리포트</a></li>
+                                    <li><a href="#">카드뉴스</a></li>
+                                    <li><a href="#">문화마루</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">문화SNS지도</a></li>
+                            <li><a href="#">웹진</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="font-bold text-xl main_txt">문화지식</a>
+                            <ul class="sub_menu">
+                            <li><a href="#">문화자료관</a></li>
+                            <li>
+                                <a href="#">전통문양
+                                    <span class="point">특화서비스</span>
+                                </a>
+                                <ul class="text-xs">
+                                    <li><a href="#">디자인문양</a></li>
+                                    <li><a href="#">형태별문양</a></li>
+                                    <li><a href="#">용도별문양</a></li>
+                                    <li><a href="#">활용디자인</a></li>
+                                    <li><a href="#">전통문양특별전</a></li>
+                                    <li><a href="#">3D프린팅콘텐츠</a></li>
+                                    <li><a href="#">전통문양활용</a></li>
+                                    <li><a href="#">문양의 이해</a></li>
+                                    <li><a href="#">전통문양사용방법</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">예술지식백과</a></li>
+                            <li><a href="#">실감형콘텐츠</a></li>
+                            <li>
+                                <a href="#">문화정보분석
+                                    <span class="point">특화서비스</span>
+                                </a>
+                                <ul class="sub_sub_menu sub_sub_menu_3 text-xs">
+                                    <li><a href="#">문화정보 데이터분석</a></li>
+                                    <li><a href="#">예술,관광 지도매핑 서비스</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="font-bold text-xl main_txt">문화알리미</a>
+                            <ul class="sub_menu">
+                            <li><a href="#">문화드림</a></li>
+                            <li><a href="#">채용·자원봉사모집</a></li>
+                            <li><a href="#">정책뉴스</a></li>
+                            <li><a href="#">문화이벤트</a></li>
+                            <li><a href="#">문화포털API</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="mypage text-xl main_txt">마이페이지</a>
+                            <ul class="sub_menu">
+                            <li><a href="#">이용안내</a>
+                                <ul class="sub_sub_menu sub_sub_menu_4 text-xs">
+                                    <li><a href="#">사이트소개</a></li>
+                                    <li><a href="#">자주찾는질문</a></li>
+                                    <li><a href="#">서비스문의</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">마이페이지</a>
+                                <ul class="text-xs">
+                                    <li><a href="#">사이트소개</a></li>
+                                    <li><a href="#">자주찾는질문</a></li>
+                                    <li><a href="#">서비스문의</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">English</a></li>
+                            <li><a href="#">문화융성카드</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <div class="pc_top_menu_btn flex">
+                        <a href="#" class="btn_chatbot mr-[10px]"><img src="images/btn_chatbot.png" alt="챗봇버튼"></a>
+                        <a href="#" class="banner_link2"><img src="images/img_culture_guide.png" alt="문화홍보등록"></a>
+                    </div>
+                    <div class="header_menu_bg"></div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 스와이퍼 -->
+    <div class="banner_contents">
+        <div class="visual_banner banner-contn">
+            <div class="banner_slides mx-auto">
+                <div class="swiper swiper-container">
+                    <ul class="swiper-wrapper swiper_wrap">
+                        <li class="swiper-slide swiper-slide-1">
+                            <a href="#">
+                                <img src="images/banner_01.png" alt="2023 문화의 달 콘텐츠를 구경하신 후 초성에 맞는 정답을 채우고 푸짐한 선물도 받아가세요!~
+                                                                                                                                                                                                            이벤트 기간 : 2023.10.16(월) ~ 10.22(일)
+                                                                                                                                                                                                            당첨자 발표 : 이벤트 종료 후 1주 이내 문화포털 홈페이지 게시">
+
+                            </a>
+                        </li>
+                        <li class="swiper-slide swiper-slide-2">
+                            <a href="#">
+                                <img src="images/banner_02.png" alt="2023년 9,10월 문화릴레이티켓">
+                            </a>
+                        </li>
+                        <li class="swiper-slide swiper-slide-3">
+                            <a href="#">
+                                <img src="images/banner_03.png" alt="2023 문화체육관광 분야 디지털혁신 공모전 우수사례와 아이디어 공모">
+                            </a>
+                        </li>
+                        <li class="swiper-slide swiper-slide-4">
+                            <a href="#">
+                                <img src="images/banner_04.png" alt="내 손안의 티켓할인 문화릴레이티켓 전국민 누구나 누릴 수 있는 국공립 공연장과 공연단체에서 준비한 특별한 할인! 문화포털 모바일에서 만나보세요!">
+                            </a>
+                        </li>
+                        <li class="swiper-slide swiper-slide-5">
+                            <a href="#">
+                                <img src="images/banner_05.jpg" alt="전통문양 만족도 조사 ">
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="swiper-btn-group swiper-btn-group-1">
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                                    
+                    <div class="swiper-btn-group swiper-btn-group-2">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>	
+                        <button class="swiper-button-start hidden">
+                            <span class="hidden">재생</span>
+                        </button>
+                        <button class="swiper-button-pause">
+                            <span class="hidden">멈춤</span>
+                        </button>
+                    </div>
+                    
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="banner-con con h-[70px] flex gap-x-[50px]">
+                <div class="notice-banner">
+                    <div class="notice-banner-cont flex h-full items-center justify-center">
+                        <strong class="mr-6 w-[350px] ml-[15px] text-center">공지사항</strong>
+                        <div class="swiper swiper-container notice_swiper_wrap !h-[27px]">
+                            <ul class="swiper-wrapper w-full">
+                                <li class="swiper-slide swiper-slide-1"><a href="#">[공지] 문화포털 사이트 서비스 일시 중단 안내(2023년 2월 23일(목), 18:00 ~ 19:00)</a></li>
+                                <li class="swiper-slide swiper-slide-2"><a href="#">[설문 이벤트] 문화체육관광부 초거대 AI 도입에 대한 의견수렴(~10월 5일(목)까지)</a></li>
+                                <li class="swiper-slide swiper-slide-3"><a href="#">2023년 문화포털 만족도 조사 이벤트 당첨자 발표</a></li>
+                                <li class="swiper-slide swiper-slide-4"><a href="#">2023년도 문화PD 21기 모집(~6/6)</a></li>
+                                <li class="swiper-slide swiper-slide-5"><a href="#">[안내] 가정의 달 5월, 집콕+집밖 문화생활 특별전과 함께해요~!</a></li>
+                            </ul>
+                        </div>
+                        <div class="swiper-button-group notice-btn-group flex items-center justify-center mr-[10px]">
+                            <div class="btn-prev notice-btn__prev"></div>
+                            <div class="btn-next notice-btn__next"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="culture-banner">
+                    <div class="culture-banner-cont h-full flex items-center">
+                        <strong class="mr-6 w-[150px] ml-[15px] text-center">문화릴레이티켓</strong>
+                        <div class="swiper swiper-container culture_swiper_wrap !h-[30px]">
+                            <ul class="swiper-wrapper w-full">
+                                <li class="swiper-slide swiper-slide-1">
+                                    <a href="#">
+                                        <span class="sale">
+                                            <em>30</em>
+                                            %
+                                        </span>
+                                        <p>My favorite Sonatine</p>
+                                        <span class="date">2023.10.05 ~ 2023.10.05</span>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide swiper-slide-2">
+                                    <a href="#">
+                                        <span class="sale">
+                                            <em>30</em>
+                                            %
+                                        </span>
+                                        <p>푸치니의 투란도트</p>
+                                        <span class="date">2023.10.26 ~ 2023.10.29</span>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide swiper-slide-3">
+                                    <a href="#">
+                                        <span class="sale">
+                                            <em>30</em>
+                                            %
+                                        </span>
+                                        <p>오프닝 콘서트：피아노 오케스트라</p>
+                                        <span class="date">2023.10.04 ~ 2023.10.04</span>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide swiper-slide-4">
+                                    <a href="#">
+                                        <span class="sale">
+                                            <em>30</em>
+                                            %
+                                        </span>
+                                        <p>안드라스 쉬프 피아노 리사이틀</p>
+                                        <span class="date">2023.10.06 ~ 2023.10.06</span>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide swiper-slide-5">
+                                    <a href="#">
+                                        <span class="sale">
+                                            <em>30</em>
+                                            %
+                                        </span>
+                                        <p>피아노 콜라보의 밤</p>
+                                        <span class="date">2023.10.05 ~ 2023.10.05</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-button-group culture-btn-group flex items-center justify-center mr-[10px]">
+                            <div class="btn-prev culture-btn__prev"></div>
+                            <div class="btn-next culture-btn__next"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 고정 배너 -->
+    <div class="pc_floating_banner">
+        <div class="floating_banner_wrap">
+            <div class="f-banner_top">
+                <img src="images/floating_banner_top.png" alt="문화홍보등록">
+            </div>
+            <div class="f-banner_mid">
+                <div class="f-banner_list">
+                    <a href="#">
+                        <img src="images/floating_banner_01.png" alt="주간문화예보">
+                    </a>
+                </div>
+                <div class="f-banner_item">
+                    <a href="#">
+                        <img src="images/floating_banner_relay.png" alt="문화포털 릴레이티켓">
+                    </a>
+                </div>
+            </div>
+            <div class="banner-bottom">
+                <img src="images/floating_banner_bottom.png" alt="">
+            </div>
+        </div>
+        <div class="top_button mt-[30px] mx-auto vert-move">TOP</div>
+    </div>
+
+    <!-- 구역 1 -->
+    <section class="content_section_1 mt-[80px]">
+        <div class="content_mainservice w-full mx-auto pt-[80px]">
+            <div class="con mx-auto flex flex-col text-center">
+                <h2 class="font-bold text-3xl">주요 서비스</h2>
+                <p class="mt-[16px]">문화포털의 주요서비스를 바로 만나보세요!</p>
+                <ul class="service_list justify-between flex mt-[52px]">
+                    <li class="icon_home">
+                        <a href="#">
+                            <span>특화서비스</span>
+                            집콕+집밖
+                            <br>
+                            문화생활
+                        </a>
+                    </li>
+                    <li class="icon_eye">
+                        <a href="#">
+                            한눈에 보는
+                            <br>
+                            문화정보
+                        </a>
+                    </li>
+                    <li class="icon_tv">
+                        <a href="#">
+                            <span>특화서비스</span>
+                            문화TV
+                        </a>
+                    </li>
+                    <li class="icon_hand">
+                        <a href="#">
+                            공감마당
+                        </a>
+                    </li>
+                    <li class="icon_pattern">
+                        <a href="#">
+                            <span>특화서비스</span>
+                            전통문양
+                        </a>
+                    </li>
+                    <li class="icon_book">
+                        <a href="#">
+                            예술지식
+                            <br>
+                            백과
+                        </a>
+                    </li>
+                    <li class="icon_search">
+                        <a href="#">
+                            <span>특화서비스</span>
+                            문화정보
+                            <br>
+                            분석
+                        </a>
+                    </li>
+                    <li class="icon_calendar">
+                        <a href="#">
+                            문화
+                            <br>
+                            캘린더
+                        </a>
+                    </li>
+                    <li class="icon_api">
+                        <a href="#">
+                            문화포털
+                            <br>
+                            오픈 API
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_culture_con w-full mt-[80px]">
+            <div class="con mx-auto flex flex-col text-center">
+                <h2 class="font-bold text-3xl text-center">내 주변 문화콘텐츠</h2>
+                <div class="adress_option mx-auto flex mt-[40px]">
+                    <select id="click_Sido" title="시,도 선택">
+                        <option value="110">서울시</option>
+                        <option value="111">부산시</option>
+                        <option value="112">대구시</option>
+                        <option value="113">인천시</option>
+                        <option value="114">대전시</option>
+                        <option value="115">광주시</option>
+                        <option value="116">울산시</option>
+                        <option value="117">세종시</option>
+                        <option value="118">경기도</option>
+                        <option value="119">강원도</option>
+                        <option value="120">충북</option>
+                        <option value="121">충남</option>
+                        <option value="122">전북</option>
+                        <option value="123">전남</option>
+                        <option value="124">경북</option>
+                        <option value="125">경남</option>
+                        <option value="126">제주도</option>
+                    </select>
+                    <select id="click_5km" name="click_5km" title="선택된 위치로 부터 반경 Km 선택" onchange="">
+                            <option value="5">반경 5km</option>
+                            <option value="10">반경 10km</option>
+                            <option value="15">반경 15km</option>
+                            <option value="20">반경 20km</option>
+                            <option value="30">반경 30km</option>
+                        </select>
+                    <span class="click_addr">
+                        <select id="click_guguun" title="주소 선택" onchange="">
+                                <option value="274">서울시 강남구</option>
+                                <option value="275">서울시 강동구</option>
+                                <option value="276">서울시 강북구</option>
+                                <option value="277">서울시 강서구</option>
+                                <option value="278">서울시 관악구</option>
+                                <option value="279">서울시 광진구</option>
+                                <option value="280">서울시 구로구</option>
+                                <option value="281">서울시 금천구</option>
+                                <option value="282">서울시 노원구</option>
+                                <option value="283">서울시 도봉구</option>
+                                <option value="284">서울시 동대문구</option>
+                                <option value="285">서울시 동작구</option>
+                                <option value="286">서울시 마포구</option>
+                                <option value="287">서울시 서대문구</option>
+                                <option value="288">서울시 서초구</option>
+                                <option value="289">서울시 성동구</option>
+                                <option value="290">서울시 성북구</option>
+                                <option value="291">서울시 송파구</option>
+                                <option value="292">서울시 양천구</option>
+                                <option value="293">서울시 영등포구</option>
+                                <option value="294">서울시 용산구</option>
+                                <option value="295">서울시 은평구</option>
+                                <option value="296">서울시 종로구</option>
+                                <option value="297">서울시 중구</option>
+                                <option value="298">서울시 중랑구</option>
+                            </select>
+                    </span>						
+                </div>
+                <div class="culture_content_slide w-full mx-auto mt-[52px]">
+                    <div class="swiper-container mx-auto pb-[88px]">
+                        <ul class="swiper-wrapper flex">
+                            <li class="swiper-slide">
+                                <a href="#" class="img">
+                                    <img src="images/show_01.png" alt="한미동맹 70주년 기념 같이 갑시다">
+                                </a>
+                                <div class="flag_box">
+                                    <span class="flag">전시</span>
+                                    <span class="flag">서울</span>
+                                </div>
+                                <p>
+                                    <a href="#">한미동맹 70주년 "같이 갑시다"</a>
+                                </p>
+                                <div class="minitxt_box">
+                                    <span class="date">2023.06.25 ~ 2023.12.31</span>
+                                    <span class="addr">대한민국역사박물관</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" class="img">
+                                    <img src="images/show_02.jpg" alt="한미동맹 70주년 기념 전시, 초대 주미공사 박정양">
+                                </a>
+                                <div class="flag_box">
+                                    <span class="flag">전시</span>
+                                    <span class="flag">서울</span>
+                                </div>
+                                <p>
+                                    <a href="#">한미동맹 70주년 기념 전시, 초대 주미공사 박정양</a>
+                                </p>
+                                <div class="minitxt_box">
+                                    <span class="date">2023.06.25 ~ 2023.12.31</span>
+                                    <span class="addr">대한민국역사박물관</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" class="img">
+                                    <img src="images/show_03.png" alt="한미동맹 70주년 기념 특별전, 동행">
+                                </a>
+                                <div class="flag_box">
+                                    <span class="flag">전시</span>
+                                    <span class="flag">서울</span>
+                                </div>
+                                <p>
+                                    <a href="#">한미동맹 70주년 기념 특별전, 동행</a>
+                                </p>
+                                <div class="minitxt_box">
+                                    <span class="date">2023.06.25 ~ 2023.12.31</span>
+                                    <span class="addr">대한민국역사박물관</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" class="img">
+                                    <img src="images/show_04.jpg" alt="2023 광화문 책마당">
+                                </a>
+                                <div class="flag_box">
+                                    <span class="flag">전시</span>
+                                    <span class="flag">서울</span>
+                                </div>
+                                <p>
+                                    <a href="#">2023 광화문 책마당</a>
+                                </p>
+                                <div class="minitxt_box">
+                                    <span class="date">2023.06.25 ~ 2023.12.31</span>
+                                    <span class="addr">대한민국역사박물관</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" class="img">
+                                    <img src="images/show_05.jpg" alt="송현공원 야외조각 특별전 : 땅을 딛고">
+                                </a>
+                                <div class="flag_box">
+                                    <span class="flag">전시</span>
+                                    <span class="flag">서울</span>
+                                </div>
+                                <p>
+                                    <a href="#">송현공원 야외조각 특별전 : 땅을 딛고</a>
+                                </p>
+                                <div class="minitxt_box">
+                                    <span class="date">2023.06.25 ~ 2023.12.31</span>
+                                    <span class="addr">대한민국역사박물관</span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#" class="img">
+                                    <img src="images/show_06.jpg" alt="푸치니의 투란도트">
+                                </a>
+                                <div class="flag_box">
+                                    <span class="flag">전시</span>
+                                    <span class="flag">서울</span>
+                                </div>
+                                <p>
+                                    <a href="#">푸치니의 투란도트</a>
+                                </p>
+                                <div class="minitxt_box">
+                                    <span class="date">2023.06.25 ~ 2023.12.31</span>
+                                    <span class="addr">대한민국역사박물관</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 구역 2 -->
+    <section class="content_section_2 mt-[80px]">
+        <div class="content2 content_achive w-full mx-auto pt-[80px]">
+            <div class="con mx-auto flex flex-col text-center">
+                <h2>문화자료관</h2>
+                <p>다채로운 문화 기록자료를 한데 모아 선보입니다</p>
+                <div class="search_achive w-full mt-[52px]">
+                    <div class="search_box mx-auto">
+                        <input type="text" placeholder="검색어를 입력해 주세요.">
+                        <button class="achive_search_btn"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content2 content_dream w-full mx-auto pt-[80px]">
+            <div class="con mx-auto flex flex-col text-center">
+                <h2>문화드림</h2>
+                <p>문화예술계 정책서비스 및 지원사업을 안내합니다</p>
+                <div class="con dream_tap mt-[47px]">
+                    <div class="w-full dream_tap_con">
+                        <ul class="dream_tab_list flex px-[27px]">
+                            <li><a href="#tab01">일반인</a></li>
+                            <li><a href="#tab02">예술인</a></li>
+                            <li><a href="#tab03">체육인</a></li>
+                            <li><a href="#tab04">문화소외계층</a></li>
+                            <li><a href="#tab05">단체·기관</a></li>
+                            <li><a href="#tab06">기업·사업가</a></li>
+                    </ul>
+                    </div>
+                    <div class="w-full dream_tab_box pt-[40px]">
+                        <div class="dream_tab_li_box dream_tab_li_box-1" id="tab01">
+                            <ul class="dream_tab__li">
+                                <li><a href="#">전체</a></li>
+                                <li><a href="#">전국민</a></li>
+                                <li><a href="#">일반국민</a></li>
+                                <li><a href="#">외국인</a></li>
+                            </ul>
+                        </div>
+                        <div class="dream_tab_li_box dream_tab_li_box-2" id="tab02">
+                            <ul class="dream_tab__li">
+                                <li><a href="#">전체</a></li>
+                                <li><a href="#">예술활동증명 예술인</a></li>
+                                <li><a href="#">특허대상 예술인</a></li>
+                                <li><a href="#">신진·청년 예술인</a></li>
+                                <li><a href="#">분야별 활동 예술인</a></li>
+                            </ul>
+                        </div>
+                        <div class="dream_tab_li_box dream_tab_li_box-3" id="tab03">
+                            <ul class="dream_tab__li">
+                                <li><a href="#">전체</a></li>
+                                <li><a href="#">체육(현역/입상/국가대표)선수</a></li>
+                                <li><a href="#">특허대상 체육인</a></li>
+                                <li><a href="#">은퇴 체육인</a></li>
+                                <li><a href="#">체육지도자</a></li>
+                            </ul>
+                        </div>
+                        <div class="dream_tab_li_box dream_tab_li_box-4" id="tab04">
+                            <ul class="dream_tab__li">
+                                <li><a href="#">전체</a></li>
+                                <li><a href="#">특혜대상/소외계층</a></li>
+                                <li><a href="#">유·청소년</a></li>
+                                <li><a href="#">군인</a></li>
+                            </ul>
+                        </div>
+                        <div class="dream_tab_li_box dream_tab_li_box-5" id="tab05">
+                            <ul class="dream_tab__li">
+                                <li><a href="#">전체</a></li>
+                                <li><a href="#">예술관련 기관/단체</a></li>
+                                <li><a href="#">체육관련 기관/단체</a></li>
+                                <li><a href="#">복지/의료/비영리 단체</a></li>
+                            </ul>
+                            </div>
+                        <div class="dream_tab_li_box dream_tab_li_box-6" id="tab06">
+                            <ul class="dream_tab__li">
+                                <li><a href="#">전체</a></li>
+                                <li><a href="#">게임분야</a></li>
+                                <li><a href="#">방송분야</a></li>
+                                <li><a href="#">콘텐츠분야</a></li>
+                                <li><a href="#">음악분야</a></li>
+                                <li><a href="#">체육분야</a></li>
+                                <li><a href="#">기타(패션/창작 브랜드 등)분야</a></li>
+                            </ul>
+                    </div>
+                    </div>
+                    <div class="dream_tab_btn mt-[40px]">
+                        <a href="#">지원 사업 보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 구역 3 -->
+    <section class="content_section_3 mt-[80px]">
+        <div class="content3 content_achive w-full mx-auto pb-[80px]">
+            <div class="con mx-auto flex flex-col text-center">
+                <h2>특화 콘텐츠</h2>
+                <p>문화포털의 특화콘텐츠를 만나보세요</p>
+                <div class="spec_con w-full mt-[52px]">
+                    <div class="con_box flex">
+                        <div class="sepc_con_leftbox">
+                            <h3>문화TV</h3>
+                            <p>영상으로 만나는 다채로운 문화콘텐츠를 소개합니다.</p>
+                            <div class="swiper swiper-container tv_swiper_wrap h-[360px] mt-[36px]">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide swiper-slide-1">
+                                        <a href="#">
+                                            <img src="images/cultureTvContents_01.png" alt="[문화PD] 빠르게 변하는 현대사회 문화에 영향을 준 디지털 신기술은 뭐가 있을까?">
+                                            <span class="time">09:07</span>
+                                        </a>
+                                        <div class="s-flag-box">
+                                            <span class="s-flag">문화산업</span>
+                                            <span class="s-flag">서울</span>
+                                        </div>
+                                        <p>
+                                            <a href="#">[문화PD] 빠르게 변하는 현대사회 문화에 영향을 준 디지털 신기술은 뭐가 있을까?</a>
+                                        </p>
+                                    </li>
+                                    <li class="swiper-slide swiper-slide-2">
+                                        <a href="#">
+                                            <img src="images/cultureTvContents_02.png" alt="[문화PD] 역사의 중심, 종로의 박물관은 실감형 콘텐츠로 통(通)한다!">
+                                            <span class="time">05:01</span>
+                                        </a>
+                                        <div class="s-flag-box">
+                                            <span class="s-flag">문화유산</span>
+                                            <span class="s-flag">서울</span>
+                                        </div>
+                                        <p>
+                                            <a href="#">[문화PD] 역사의 중심, 종로의 박물관은 실감형 콘텐츠로 통(通)한다!</a>
+                                        </p>
+                                    </li>
+                                    <li class="swiper-slide swiper-slide-3">
+                                        <a href="#">
+                                            <img src="images/cultureTvContents_03.png" alt="[문화PD] 디지털 실감 기술로 방탈출게임을? 역사적 공간이 게임 속 세계가 된다!">
+                                            <span class="time">04:55</span>
+                                        </a>
+                                        <div class="s-flag-box">
+                                            <span class="s-flag">관광</span>
+                                            <span class="s-flag">서울</span>
+                                        </div>
+                                        <p>
+                                            <a href="#">[문화PD] 디지털 실감 기술로 방탈출게임을? 역사적 공간이 게임 속 세계가 된다!</a>
+                                        </p>
+                                    </li>
+                                    <li class="swiper-slide swiper-slide-4">
+                                        <a href="#">
+                                            <img src="images/cultureTvContents_04.png" alt="[문화PD] 10년 뒤 이렇게 바뀝니다. 불가능을 가능하게 만드는 놀라운 신기술">
+                                            <span class="time">04:32</span>
+                                        </a>
+                                        <div class="s-flag-box">
+                                            <span class="s-flag">문화예술</span>
+                                            <span class="s-flag">경북</span>
+                                        </div>
+                                        <p>
+                                            <a href="#">[문화PD] 10년 뒤 이렇게 바뀝니다. 불가능을 가능하게 만드는 놀라운 신기술</a>
+                                        </p>
+                                    </li>
+                                    <li class="swiper-slide swiper-slide-5">
+                                        <a href="#">
+                                            <img src="images/cultureTvContents_05.jpg" alt="[문화PD] 실감나는 체험이 기다리는 곳!">
+                                            <span class="time">05:13</span>
+                                        </a>
+                                        <div class="s-flag-box">
+                                            <span class="s-flag">문화산업</span>
+                                            <span class="s-flag">인천</span>
+                                        </div>
+                                        <p>
+                                            <a href="#">[문화PD] 실감나는 체험이 기다리는 곳!</a>
+                                        </p>
+                                    </li>
+                                    <li class="swiper-slide swiper-slide-6">
+                                        <a href="#">
+                                            <img src="images/cultureTvContents_06.jpg" alt="[문화PD] 뉴미디어X미디어리터러시">
+                                            <span class="time">04:02</span>
+                                        </a>
+                                        <div class="s-flag-box">
+                                            <span class="s-flag">생활</span>
+                                            <span class="s-flag">부산</span>
+                                        </div>
+                                        <p>
+                                            <a href="#">[문화PD] 뉴미디어X미디어리터러시</a>
+                                        </p>
+                                    </li>
+                                </ul>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                                <button class="swiper-button-start hidden">
+                                    <span class="hidden">재생</span>
+                                </button>
+                                <button class="swiper-button-pause">
+                                    <span class="hidden">멈춤</span>
+                                </button>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="sepc_con_centerbox">
+                            <div class="centerbox">
+                                <h3>전통문양</h3>
+                                <p>고유의 미감을 담고 있는 다양한 형태별, 용도별 문양을
+                                    <br>활용해보세요
+                                </p>
+                                <a href="#" class="center_more">바로가기</a>
+                                <ul class="list_guide flex mt-[16px] justify-between">
+                                    <li class="list_guide_icon list_guide_1">
+                                        <a href="#">
+                                            활용
+                                            <br>
+                                            가이드
+                                        </a>
+                                    </li>
+                                    <li class="list_guide_icon list_guide_2">
+                                        <a href="#">
+                                            디자인
+                                            <br>
+                                            가이드
+                                        </a>
+                                    </li>
+                                    <li class="list_guide_icon list_guide_3">
+                                        <a href="#">
+                                            문양의
+                                            <br>
+                                            이해
+                                        </a>
+                                    </li>
+                                    <li class="list_guide_icon list_guide_4">
+                                        <a href="#">
+                                            전통문양
+                                            <br>
+                                            사용신청
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="smallbox_wrap flex gap-x-[40px]">
+                                <div class="smallbox smallbox-1">
+                                    <p>공감마당</p>
+                                    <ul class="smallbox-list">
+                                        <li><a href="#">공감리포트</a></li>
+                                        <li><a href="#">카드뉴스</a></li>
+                                        <li><a href="#">문화마루</a></li>
+                                    </ul>
+                                    <a href="#" class="more">바로가기</a>
+                                </div>
+                                <div class="smallbox smallbox-2">
+                                    <p>예술용어사전</p>
+                                    <span>
+                                        가나다 순으로
+                                        <br>
+                                        찾으시는 문화 관련
+                                        <br>
+                                        예술용어를
+                                        <br>
+                                        찾아보세요.
+                                    </span>
+                                    <a href="#" class="more">바로가기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sepc_con_rightbox">
+                            <div class="title_cont">
+                                <div class="sub_cont">
+                                    <h3>문화공간 · 단체</h3>
+                                    <a href="#" class="right_more">바로가기</a>
+                                    <div class="culture_input_cont w-full mt-[15px]">
+                                        <div class="cinput">
+                                            <span class="radiobox">
+                                                <input type="radio" checked="checked">문화시설
+                                            </span>
+                                            <span class="radiobox">
+                                                <input type="radio">체육시설
+                                            </span>
+                                        </div>
+                                        <div class="cinput">
+                                            <span class="radiobox">
+                                                <input type="radio">문화예술단체
+                                            </span>
+                                            <span class="radiobox">
+                                                <input type="radio">문화비소득공제
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="culture_select">
+                                        <div class="click_addr_room flex">
+                                            <select id="click_Sido" title="시,도 선택">
+                                                <option value="110">서울시</option>
+                                                <option value="111">부산시</option>
+                                                <option value="112">대구시</option>
+                                                <option value="113">인천시</option>
+                                                <option value="114">대전시</option>
+                                                <option value="115">광주시</option>
+                                                <option value="116">울산시</option>
+                                                <option value="117">세종시</option>
+                                                <option value="118">경기도</option>
+                                                <option value="119">강원도</option>
+                                                <option value="120">충북</option>
+                                                <option value="121">충남</option>
+                                                <option value="122">전북</option>
+                                                <option value="123">전남</option>
+                                                <option value="124">경북</option>
+                                                <option value="125">경남</option>
+                                                <option value="126">제주도</option>
+                                            </select>
+                                            <select id="click_guguun" title="주소 선택" onchange="">
+                                                <option value="274">서울시 강남구</option>
+                                                <option value="275">서울시 강동구</option>
+                                                <option value="276">서울시 강북구</option>
+                                                <option value="277">서울시 강서구</option>
+                                                <option value="278">서울시 관악구</option>
+                                                <option value="279">서울시 광진구</option>
+                                                <option value="280">서울시 구로구</option>
+                                                <option value="281">서울시 금천구</option>
+                                                <option value="282">서울시 노원구</option>
+                                                <option value="283">서울시 도봉구</option>
+                                                <option value="284">서울시 동대문구</option>
+                                                <option value="285">서울시 동작구</option>
+                                                <option value="286">서울시 마포구</option>
+                                                <option value="287">서울시 서대문구</option>
+                                                <option value="288">서울시 서초구</option>
+                                                <option value="289">서울시 성동구</option>
+                                                <option value="290">서울시 성북구</option>
+                                                <option value="291">서울시 송파구</option>
+                                                <option value="292">서울시 양천구</option>
+                                                <option value="293">서울시 영등포구</option>
+                                                <option value="294">서울시 용산구</option>
+                                                <option value="295">서울시 은평구</option>
+                                                <option value="296">서울시 종로구</option>
+                                                <option value="297">서울시 중구</option>
+                                                <option value="298">서울시 중랑구</option>
+                                            </select>
+                                        </div>
+                                        <div class="click_addr_room_2 flex">
+                                            <select id="click_space" title="문화공간선택">
+                                                <option value="100">문화시설</option>
+                                                <option value="200">공연장</option>
+                                                <option value="300">미술관</option>
+                                                <option value="400">박물관</option>
+                                                <option value="500">문화-복지 시군구 회관</option>
+                                                <option value="600">도서관</option>
+                                                <option value="700">기타문화공간</option>
+                                                <option value="800">영화관</option>
+                                                <option value="900">문화재</option>
+                                                <option value="1000">서점</option>
+                                            </select>
+                                            <div class="space_box ml-[8px]">
+                                                <input type="text" placeholder="검색어를 입력하세요.">
+                                                <button class="space_btn"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="icon_cont">
+                                <ul class="addr_list flex flex-wrap mt-[-14px]">
+                                    <li class="addr_list_01">
+                                        <a href="#">공연장</a>
+                                    </li>
+                                    <li class="addr_list_02">
+                                        <a href="#">미술관</a>
+                                    </li>
+                                    <li class="addr_list_03">
+                                        <a href="#">박물관</a>
+                                    </li>
+                                    <li class="addr_list_04">
+                                        <a href="#">도서관</a>
+                                    </li>
+                                    <li class="addr_list_05">
+                                        <a href="#">영화관</a>
+                                    </li>
+                                    <li class="addr_list_06">
+                                        <a href="#">서점</a>
+                                    </li>
+                                    <li class="addr_list_07">
+                                        <a href="#">문화복지회관</a>
+                                    </li>
+                                    <li class="addr_list_08">
+                                        <a href="#">기타</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sepc_con_notibox con flex mt-[40px] gap-x-[40px]">
+                        <div class="noticebox culture_eventbox">
+                            <h3>문화이벤트</h3>
+                            <hr>
+                            <ul class="noticelist">
+                                <li>
+                                    <p>
+                                        <span class="flag">응모마감</span>
+                                        <a href="#">문화초대이벤트 도담도담 페스티벌(프로젝트 입금 : 나와당신, 그리고 우리의 여행이야기)</a>
+                                    </p>
+                                    <span class="date">2023-10-17 ~ 2023-10-31</span>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span class="flag">응모마감</span>
+                                        <a href="#">문화초대이벤트 연극 '슬기로운 신혼생활'</a>
+                                    </p>
+                                    <span class="date">2023-10-04 ~ 2023-10-18</span>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span class="flag">응모마감</span>
+                                        <a href="#">2023 문화의 달 초성맞추기 이벤트</a>
+                                    </p>
+                                    <span class="date">2023-10-17 ~ 2023-10-22</span>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span class="flag">응모마감</span>
+                                        <a href="#">문초대이벤트 '순신'</a>
+                                    </p>
+                                    <span class="date">2023-10-10 ~ 2023-10-24</span>
+                                </li>
+                            </ul>
+                            <a href="#" class="event_more"></a>
+                        </div>
+                        <div class="noticebox employbox">
+                            <h3>채용</h3>
+                            <hr>
+                            <ul class="noticelist">
+                                <li>
+                                    <p><a href="#">세종문화회관 ‘공연장 안내원 36기’ 모집 공고</a></p>
+                                    <span class="date">2023-10-30</span>
+                                </li>
+                                <li>
+                                    <p><a href="#">[강동문화재단] 강동아트센터 27기 공연장 안내원 모집</a></p>
+                                    <span class="date">2023-10-30</span>
+                                </li>
+                                <li>
+                                    <p><a href="#">2023년도 국립극장 안내원(공연, 매표, 놀이방) 모집공고</a></p>
+                                    <span class="date">2023-10-29</span>
+                                </li>
+                                <li>
+                                    <p><a href="#">ART OnO는 국제적인 미술 시장으로 함께 나아갈 책임감 있고 성실한 인재를 모집합니다.</a></p>
+                                    <span class="date">2023-10-29</span>
+                                </li>
+                            </ul>
+                            <a href="#" class="event_more"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 구역 4 -->
+    <section class="content_section_4 pt-[80px] pb-[80px]">
+        <div class="content4 content_sns w-full mx-auto pb-[80px]">
+            <div class="con mx-auto text-center">
+                <h2>문화포털 SNS채널</h2>
+                <p>문화포털의 최신 소식을 가장 빠르게 만나보세요</p>
+                <div class="snsbox mt-[16px]">
+                    <ul class="snslist flex">
+                        <li class="snslist_01">
+                            <a href="#"><img src="images/ico_footer_youtube.png" alt="한국문화정보원(유튜브)"></a>
+                        </li>
+                        <li class="snslist_02">
+                            <a href="#"><img src="images/ico_footer_instagram.png" alt="한국문화정보원(인스타그램)"></a>
+                        </li>
+                        <li class="snslist_03">
+                            <a href="#"><img src="images/ico_footer_facebook.png" alt="한국문화정보원(페이스북)"></a>
+                        </li>
+                        <li class="snslist_04">
+                            <a href="#"><img src="images/ico_footer_blog_02.png" alt="한국문화정보원(네이버블로그)"></a>
+                        </li>
+                        <li class="snslist_05">
+                            <a href="#"><img src="images/ico_footer_navertv.png" alt="한국문화정보원(네이버TV)"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sns_slide mt-[52px]">
+                    <div class="swiper swiper-container sns_slide_cont">
+                        <ul class="swiper-wrapper sns_slide_wrap">
+                            <li class="swiper-slide sns_slide_01">
+                                <div class="snsslide_head flex p-[25px]">
+                                    <img src="images/icon_sns_instagram_42.png" alt="한국문화정보원(인스타그램)">
+                                    <a href="#">
+                                        <p>문화포털 인스타그램</p>
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="snsslide_inner">
+                                    <a href="#">
+                                        다소니 챔버오케스트라와
+                                        <br>
+                                        루멘챔버오케스트라의 일곱번째 정기연주회
+                                        악기연주로 세상과 소통하는 다소니와 루멘의
+                                        멋진 공연에 여러분들을 초대합니다!!
+
+                                        연주회
+
+                                        장소 : 광명극장
+                                        일시 : 2023.11.2 (목) 오후 3시
+                                        정보 : https://bitly.ws/YYWa
+                                    </a>
+                                    <span class="inner_date">2023-10-31</span>
+                                    <span class="sns_icon icon_instagram"></span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide sns_slide_02">
+                                <div class="snsslide_head flex p-[25px]">
+                                    <img src="images/ico_footer_blog_02.png" alt="한국문화정보원(네이버블로그)">
+                                    <a href="#">
+                                        <p class="text-left">[문화추천] 종합 공연 <마음대로, 점프!>
+                                        </p>
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="snsslide_inner">
+                                    <a href="#">
+                                        가정폭력생존자들이 직접 만들고 참여하는 '마음대로, 점프!' 여섯 생존자들의 목소리, 이야기가 실린 춤과 직접 만든 자작곡 그리고 토크로 치유와 성장 그리고 용기의 메세지를 전달합니다. 종합 공연 <마음대로, 점프!> ▼ 공연 정보 보러가기 ▼ <마음대로, 점프!> ※ 일시 2023.11.4 (토) 오후 3시 ※ 장소 광명극장
+                                    </a>
+                                    <span class="inner_date">2023-10-31</span>
+                                    <span class="sns_icon icon_naverblog"></span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide sns_slide_03">
+                                <div class="snsslide_head flex p-[25px]">
+                                    <img src="images/ico_footer_blog_02.png" alt="한국문화정보원(네이버블로그)">
+                                    <a href="#">
+                                        <p class="text-left">[문화추천] 연주회 <다소니와 루멘이 만나다>
+                                        </p>
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="snsslide_inner">
+                                    <a href="#">
+                                        다소니 챔버오케스트라와
+                                        <br>
+                                        루멘챔버오케스트라의 일곱번째 정기연주회
+                                        악기연주로 세상과 소통하는 다소니와 루멘의
+                                        멋진 공연에 여러분들을 초대합니다!!
+
+                                        연주회
+
+                                        장소 : 광명극장
+                                        일시 : 2023.11.2 (목) 오후 3시
+                                        정보 : https://bitly.ws/YYWa
+                                    </a>
+                                    <span class="inner_date">2023-10-31</span>
+                                    <span class="sns_icon icon_naverblog"></span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide sns_slide_04">
+                                <div class="snsslide_head flex p-[25px]">
+                                    <img src="images/icon_sns_instagram_42.png" alt="한국문화정보원(인스타그램)">
+                                    <p>문화포털 인스타그램</p>
+                                </div>
+                                <hr>
+                                <div class="snsslide_inner">
+                                    <a href="#">
+                                        가정폭력생존자들이 직접 만들고 참여하는 '마음대로, 점프!'
+
+                                        여섯 생존자들의 목소리, 이야기가 실린 춤과 직접 만든 자작곡
+                                        그리고 토크로 치유와 성장 그리고 용기의 메세지를 전달합니다.
+
+                                        종합 공연
+
+                                        장소 : 광명극장
+                                        일시 : 2023.11.4 (토) 오후 3시
+                                        정보 : https://bitly.ws/YYUb
+                                    </a>
+                                    <span class="inner_date">2023-10-31</span>
+                                    <span class="sns_icon icon_instagram"></span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide sns_slide_05">
+                                <div class="snsslide_head flex p-[25px]">
+                                    <img src="images/icon_sns_youtube_42.png" alt="한국문화정보원(유튜브)">
+                                    <a href="#">
+                                        <p>[문화PD] 아시아 문화에 대한 가치와 즐거움을 느껴보자!</p>
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="snsslide_inner">
+                                    <a href="#">
+                                        공간을 탐구함으로써 아시아를향한 상상의 지평을 확장하고 아시아, 그 너머를 그린 작품들을 신기술을 통해 소개한다 #디지털신기술 ...
+                                    </a>
+                                    <span class="inner_date">2023-10-30</span>
+                                    <span class="sns_icon icon_youtube"></span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide sns_slide_06">
+                                <div class="snsslide_head flex p-[25px]">
+                                    <img src="images/ico_footer_blog_02.png" alt="한국문화정보원(유튜브)">
+                                    <a href="#">
+                                        <p class="text-left">[문화PD] 미디어아트의 놀이터! 문화를 즐겨보자!
+                                        </p>
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="snsslide_inner">
+                                    <a href="#">
+                                        도심속 휴양지로 인기몰이.. 문화를 즐길 수 있었다니!! 완벽한 추상! 별을 쫒는 그림자 등등 색다른 전시관으로 만나봐요! #광주미디어 ...
+                                    </a>
+                                    <span class="inner_date">2023-10-30</span>
+                                    <span class="sns_icon icon_youtube"></span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide sns_slide_07">
+                                <div class="snsslide_head flex p-[25px]">
+                                    <img src="images/icon_sns_facebook_42.png">
+                                    <a href="#">
+                                        <p class="text-left">문화포털 페이스북
+                                        </p>
+                                    </a>
+                                </div>
+                                <hr>
+                                <div class="snsslide_inner">
+                                    <a href="#">
+                                        국악
+
+                                        오랜 세월 이어 온 전통을 올곧게 전승하고 있는
+                                        명인들의 예술혼을 고스란히 담았습니다!
+                                        깊이 있고 품격 있는 명인들의 예술 세계에 초대합니다.
+
+                                        장소 : 국립국악원 풍류사랑방
+                                        일시 : 2023.05.16(화) ~ 2023.05.25(목)
+                                        연령 : 8세 이상
+                                        할인 : 문화릴레이티켓 20%
+                                        정보 : https://bit.ly/3xVZj0n
+                                    </a>
+                                    <span class="inner_date">2023-05-16</span>
+                                    <span class="sns_icon icon_facebook"></span>
+                                </div>
+                            </li>
+                            <li class="swiper-slide sns_slide_08">
+                                <div class="snsslide_head flex p-[25px]">
+                                    <img src="images/icon_sns_facebook_42.png" alt="한국문화정보원(페이스북)">
+                                    <p>문화포털 페이스북</p>
+                                </div>
+                                <hr>
+                                <div class="snsslide_inner">
+                                    <a href="#">
+                                        문화초대이벤트
+
+                                        강원도 정선의 우수한 소나무를 한양으로 보내라는 어명이 떨어졌다!
+                                        최고의 나무꾼 기목이 사랑하는 아내 정선과 딸 아리를 두고 떠나는데..!
+                                        과연 어떤 일이 벌어지게 될까요?
+
+                                        뮤지컬
+                                        문화초대이벤트에 여러분을 초대합니다!
+
+                                        응모기간 : 2023년 5월 4일 (목) ~ 2023년 5월 18일 (목)
+                                        초대인원 : 공연별 5쌍(1인2매)
+                                        초대일시 : 23년5월23일(화) 저녁 7시 30분
+                                        당첨자발표 : 23.05.19 (금)
+
+                                        ▶응모하기: bit.ly/초대이벤트
+                                    </a>
+                                    <span class="inner_date">2023-05-16</span>
+                                    <span class="sns_icon icon_facebook"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-scrollbar">
+                        <div class="swiper-scrollbar-drag"></div>
+                    </div>
+                        
+                    <div class="sns_btn_group">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                        
+                </div>
+            </div>
+        </div>
+        <div class="content4 content_event w-full mx-auto">
+            <div class="con mx-auto">
+                <div class="bnr_event_slide flex">
+                    <div class="swiper swiper-container left_bnr">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide swiper-slide-1">
+                                <a href="#">
+                                    <img src="images/left_banner_01.png" alt="원문 공공저작물 다운로드 이벤트">
+                                </a>
+                            </li>
+                            <li class="swiper-slide swiper-slide-2">
+                                <a href="#">
+                                    <img src="images/left_banner_02.png" alt="문화릴레이티켓 내 손안에 티켓할인! 문화포털 모바일에서 만나보세요! 문화포털">
+                                </a>
+                            </li>
+                        </ul>
+                            <button class="swiper-button-start hidden">
+                                <span class="hidden">재생</span>
+                            </button>
+                            <button class="swiper-button-pause">
+                                <span class="hidden">멈춤</span>
+                            </button>
+                            <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper swiper-container right_bnr">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide swiper-slide-1">
+                                <a href="#">
+                                    <img src="images/right_banner_01.jpg" alt="대전시립연정국악단 상설공연 [토요국악] ">
+                                </a>
+                            </li>
+                            <li class="swiper-slide swiper-slide-2">
+                                <a href="#">
+                                    <img src="images/right_banner_02.png" alt="2023파리나무십자가 소년합창단 크리스마스 특별초청공연  | 대한민국 공연전문가 82인선정 연말클래식 추천공연 1위! ">
+                                </a>
+                            </li>
+                            <li class="swiper-slide swiper-slide-3">
+                                <a href="#">
+                                    <img src="images/right_banner_03.png" alt="산업안전보건법 작업중지권의 명칭을 근로자에게 친밀하고, 친근한 명칭으로 변경하여 안전중지권을 홍보 하고자함 ">
+                                </a>
+                            </li>
+                        </ul>
+                        <button class="swiper-button-start hidden">
+                            <span class="hidden">재생</span>
+                        </button>
+                        <button class="swiper-button-pause">
+                            <span class="hidden">멈춤</span>
+                        </button>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <!-- 서비스 리스트 -->
+    <section class="content_section_5 my-[75px]">
+        <div class="content5 service_box w-full mx-auto">
+            <div class="con mx-auto">
+                <ul class="service_list flex">
+                    <li class="service_item">
+                        <a href="#">
+                            <i class="service__ico">
+                                <img src="images/icon_linkmenu01.png" alt="공공누리">
+                            </i>
+                            <p class="service__name">공공누리</p>
+                        </a>
+                    </li>
+                    <li class="service_item">
+                        <a href="#">
+                            <i class="service__ico">
+                                <img src="images/icon_linkmenu03.png" alt="문화공공데이터광장">
+                            </i>
+                            <p class="service__name">문화공공데이터광장</p>
+                        </a>
+                    </li>
+                    <li class="service_item">
+                        <a href="#">
+                            <i class="service__ico">
+                                <img src="images/icon_linkmenu04.png" alt="문화비 소득공제">
+                            </i>
+                            <p class="service__name">문화비 소득공제</p>
+                        </a>
+                    </li>
+                    <li class="service_item">
+                        <a href="#">
+                            <i class="service__ico">
+                                <img src="images/icon_linkmenu05.png" alt="문화빅데이터플랫폼 ">
+                            </i>
+                            <p class="service__name">문화빅데이터플랫폼</p>
+                        </a>
+                    </li>
+                    <li class="service_item">
+                        <a href="#">
+                            <i class="service__ico">
+                                <img src="images/icon_linkmenu06.png" alt="웹진이데아">
+                            </i>
+                            <p class="service__name">웹진이데아</p>
+                        </a>
+                    </li>
+                    <li class="service_item">
+                        <a href="#">
+                            <i class="service__ico">
+                                <img src="images/icon_linkmenu07.png" alt="큐레이팅봇">
+                            </i>
+                            <p class="service__name">큐레이팅봇</p>
+                        </a>
+                    </li>
+                    <li class="service_item">
+                        <a href="#">
+                            <i class="service__ico">
+                                <img src="images/icon_linkmenu02.png" alt="한국문화정보원 e-Book">
+                            </i>
+                            <p class="service__name">한국문화정보원 e-Book</p>
+                        </a>
+                    </li>
+                    <li class="service_item">
+                        <a href="#">
+                            <i class="service__ico">
+                                <img src="images/icon_linkmenu08.png" alt="실감형 전시플랫폼">
+                            </i>
+                            <p class="service__name">실감형 전시플랫폼</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="mt-[120px]">
+        <div class="w-full mx-auto">
+            <div class="footer_util">
+                <div class="con mx-auto footer_inner flex">
+                    <ul class="footer_policy flex">
+                        <li class="footer_policy_item">
+                            <a href="#">문화포털이란?</a>
+                        </li>
+                        <li class="footer_policy_item">
+                            <a href="#">관련기관 안내</a>
+                        </li>
+                        <li class="footer_policy_item">
+                            <a href="#">문화홍보등록</a>
+                        </li>
+                        <li class="footer_policy_item">
+                            <a href="#">저작권정책</a>
+                        </li>
+                        <li class="footer_policy_item">
+                            <a href="#">개인정보처리방침</a>
+                        </li>
+                        <li class="footer_policy_item">
+                            <a href="#">검색결과수집정책</a>
+                        </li>
+                    </ul>
+                    <div class="footer_family">
+                        <select id="familySite" class="footer_family_select cursor-pointer">
+                            <option value="">관련 사이트</option>
+                            <option value="#">웹진 이데아 Vol.24</option>
+                            <option value="#">실감형전시플랫폼</option>
+                            <option value="#">공공누리</option>
+                            <option value="#">모바일큐아이</option>
+                            <option value="#">문화공공데이터광장</option>
+                            <option value="#">문화비소득공제</option>
+                            <option value="#">문화빅데이터플랫폼</option>
+                            </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_info">
+                <div class="con mx-auto footer_inner flex">
+                    <div class="footer_left">
+                        <ul class="footer_link flex">
+                            <li class="footer_link_item">
+                                <a href="#">
+                                    <img src="images/footer_link01.png" alt="KCISA 한국문화정보원 새 창 열림">
+                                    </a>
+                            </li>
+                            <li class="footer_link_item">
+                                <a href="#">
+                                    <img src="images/footer_link02.png" alt="문화체육관광부 새 창 열림">
+                                </a>
+                            </li>
+                        </ul>
+                        <address class="footer_address mt-[22px]">
+                            <p class="footer_address_text">
+                                    대표전화 <a href="#">1688-2220</a> 
+                                / 이메일 <a href="mailto:culture@kcisa.kr">culture@kcisa.kr</a>
+                                <br>
+                                    우) 03925 서울시 마포구 월드컵북로 400, 6층·8층<br>
+                                    COPYRIGHT© 한국문화정보원
+                                </p>
+                            </address>
+                    </div>
+                    <div class="footer_right">
+                        <div class="footer_sns_cont mb-[25px]">
+                            <div class="footer_sns">
+                                <ul class="footer_sns_list flex">
+                                    <li class="footer_sns_list_item">
+                                            <a href="#"><img src="images/ico_footer_youtube.png" alt="한국문화정보원(유튜브)"></a>
+                                        </li>
+                                    <li class="footer_sns_list_item">
+                                            <a href="#"><img src="images/ico_footer_instagram.png" alt="한국문화정보원(인스타그램)"></a>
+                                        </li>
+                                    <li class="footer_sns_list_item">
+                                            <a href="#"><img src="images/ico_footer_facebook.png" alt="한국문화정보원(페이스북)"></a>
+                                        </li>
+                                    <li class="footer_sns_list_item">
+                                            <a href="#"><img src="images/ico_footer_blog_02.png" alt="한국문화정보원(네이버블로그)"></a>
+                                        </li>
+                                    <li class="footer_sns_list_item">
+                                            <a href="#"><img src="images/ico_footer_navertv.png" alt="한국문화정보원(네이버TV)"></a>
+                                        </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer_auth cont">
+                            <ul class="footer_auth_list flex justify-end">
+                                <li>
+                                    <a href="#">
+                                        <img src="images/img_footer_auth_wa_2023.png" alt="웹접근성 새 창 열림">
+                                    </a>
+                                </li>
+                                <li class="ml-[25px]">
+                                    <a href="#">
+                                        <img src="images/img_footer_auth_open.png" alt="공공누리 새 창 열림">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
